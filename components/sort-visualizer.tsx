@@ -120,14 +120,14 @@ export function SortVisualizer({ meta }: SortVisualizerProps) {
   return (
     <div className="flex flex-col gap-4">
       {/* Array size control */}
-      <div className="flex items-center gap-3 text-[11px] text-muted-foreground">
+      <div className="flex flex-wrap items-center gap-3 gap-y-2 text-[11px] text-muted-foreground">
         <span>Array Size:</span>
         {[16, 24, 32, 48, 64].map((size) => (
           <button
             key={size}
             onClick={() => handleSizeChange(size)}
             className={cn(
-              'px-2 py-0.5 rounded border text-[11px] transition-all',
+              'px-2 sm:px-2 py-0.5 rounded border text-[11px] transition-all',
               arraySize === size
                 ? 'border-neon/40 bg-neon/15 text-neon'
                 : 'border-border text-muted-foreground hover:text-foreground hover:bg-accent'
@@ -136,20 +136,20 @@ export function SortVisualizer({ meta }: SortVisualizerProps) {
             {size}
           </button>
         ))}
-        <div className="ml-auto flex items-center gap-3">
-          <span className="flex items-center gap-1.5">
+        <div className="ml-auto flex flex-wrap items-center gap-x-3 gap-y-2 justify-end">
+          <span className="flex items-center gap-1">
             <span className="w-3 h-3 rounded-sm bg-warn/70 border border-warn inline-block" />
             Comparing
           </span>
-          <span className="flex items-center gap-1.5">
+          <span className="flex items-center gap-1">
             <span className="w-3 h-3 rounded-sm bg-danger/70 border border-danger inline-block" />
             Swapping
           </span>
-          <span className="flex items-center gap-1.5">
+          <span className="flex items-center gap-1">
             <span className="w-3 h-3 rounded-sm bg-compare/70 border border-compare inline-block" />
             Pivot
           </span>
-          <span className="flex items-center gap-1.5">
+          <span className="flex items-center gap-1">
             <span className="w-3 h-3 rounded-sm bg-neon/70 border border-neon inline-block" />
             Sorted
           </span>
